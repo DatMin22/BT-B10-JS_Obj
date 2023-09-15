@@ -29,7 +29,7 @@ function DSNV() {
         // xử lý lấy thông tin sinh viên
         if (index !== -1) {
             var Employee = this.Employees[index];
-            console.log('Employee: ', Employee);
+            // console.log('Employee: ', Employee);
 
         }
         return Employee;
@@ -38,7 +38,7 @@ function DSNV() {
     // phương thức xóa Nhân viên
     this._deleteEmployee = function (taikhoan) {
         var index = this._findIndexEmployee(taikhoan);
-        console.log(index);
+        // console.log(index);
         if (index !== -1) {
             // xử lý xóa Nhân viên thứ i
             this.Employees.splice(index, 1);

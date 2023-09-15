@@ -114,7 +114,7 @@
 							</div>
 							<div class="col-md-6 text-right">
 								<button class="btn btn-primary" id="btnThem" data-toggle="modal"
-									data-target="#myModal">Thêm nhân viên</button>
+									data-target="#myModal" onclick="btnThem()">Thêm nhân viên</button>
 							</div>
 						</div>
 					</div>
@@ -127,7 +127,8 @@
 									<input type="text" class="form-control" placeholder="Loại nhân viên"
 										id="searchName">
 									<div class="input-group-prepend">
-										<span class="input-group-text" id="btnTimNV"><i class="fa fa-search"></i></span>
+										<button class="input-group-text btn btn-info" id="btnTimNV"
+											><i class="fa fa-search"></i></button>
 									</div>
 								</div>
 							</div>
@@ -176,7 +177,7 @@
 			<div class="modal-content">
 
 				<header class="head-form mb-0">
-					<h2 id="header-title">Log In</h2>
+					<h2 id="header-title">Form</h2>
 				</header>
 
 				<!-- Modal Header -->
@@ -188,7 +189,7 @@
 				<!-- Modal body -->
 				<div class="modal-body">
 
-					<form role="form">
+					<form role="form" id="formQLNV">
 
 						<div class="form-group">
 							<div class="input-group">
@@ -208,7 +209,7 @@
 									<span class="input-group-text"><i class="fa fa-address-book"></i></span>
 								</div>
 								<input type="name" name="name" id="name" class="form-control input-sm"
-									placeholder="Họ và tên không dấu">
+									placeholder="Họ và tên ">
 							</div>
 							<span class="sp-thongbao" id="tbTen"></span>
 						</div>
@@ -236,7 +237,7 @@
 									required>
 							</div>
 							<div id="message">
-								<!-- <h6>Mật khẩu bao gồm có:</h6> -->
+								<p>Chú ý:</p>
 								<span id="letter" class="invalid">1 chữ cái <b>thường, </b></span>
 								<span id="capital" class="invalid">1 chữ cái <b>viết hoa, </b></span>
 								<span id="number" class="invalid">1 <b>số, </b></span>
@@ -252,7 +253,7 @@
 									<span class="input-group-text"><i class="fa fa-calendar"></i></span>
 								</div>
 								<input type="text" name="ngaylam" id="datepicker" class="form-control"
-									placeholder="Ngày làm">
+									placeholder="mm/dd/yyyy">
 							</div>
 
 							<span class="sp-thongbao" id="tbNgay"></span>
@@ -300,7 +301,7 @@
 
 				<!-- Modal footer -->
 				<div class="modal-footer" id="modal-footer">
-					<button id="btnThemNV" onclick="addEmployee()" type="button" class="btn btn-success" disabl ed>Thêm người
+					<button id="btnThemNV" onclick="addEmployee()" type="button" class="btn btn-success">Thêm người
 						dùng</button>
 					<button id="btnCapNhat" type="button" onclick="updateEmployee()" class="btn btn-success">Cập
 						nhật</button>
@@ -312,6 +313,7 @@
 	</div>
 
 	<!-- Bootstrap -->
+	<!-- <script src="./js/demo.js"></script> -->
 	<script src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.easing.min.js"></script>
 	<script type="text/javascript" src="js/popper.min.js"></script>

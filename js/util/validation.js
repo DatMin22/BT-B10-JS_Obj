@@ -67,11 +67,11 @@ function validationName(value, idErr, message) {
     let DOMidErr = document.querySelector(idErr);
     const regexName = /[a-zA-Z]/g;
     const regexNumber = /\d/;
-    const regexSpacing = /\s/g;
+    const regexSpacing = /\S/g;
     var isName = regexName.test(value);
     // console.log('isName: ', isName);
     var isNumber = regexNumber.test(value);
-    console.log('isNumber: ', isNumber);
+    // console.log('isNumber: ', isNumber);
     var isSpacing = regexSpacing.test(value);
     // console.log(isSpacing);
     if (isName && !isNumber && isSpacing) {
@@ -104,12 +104,13 @@ function validationPassword(value, idErr, message) {
         && value.length >= 8) {
         DOMidErr.innerHTML = '';
         DOMidErr.style.display = 'none';
+        // console.log(value);
         return true;
 
     } else {
         DOMidErr.style.display = 'inline';
         DOMidErr.innerHTML = message;
-        flag = -1;
+        // flag = -1;
         return false;
     }
 
@@ -130,6 +131,22 @@ function validationBasicSalary(value, idErr, message) {
         DOMidErr.style.display = 'inline';
         DOMidErr.innerHTML = message;
         return false;
+    }
+
+}
+function validationNumber(value, idErr, message) {
+    // validate name have to letters by regex
+    let DOMidErr = document.querySelector(idErr);
+    if (value === 0) {
+        DOMidErr.style.display = 'inline';
+        DOMidErr.innerHTML = message;
+        return false;
+    }
+    else {
+
+        DOMidErr.style.display = 'none';
+        DOMidErr.innerHTML = '';
+        return true;
     }
 
 }
@@ -167,5 +184,24 @@ function validationPosition(value, idErr, message) {
         return false;
     }
 
+}
+
+// 
+function kiemTraTrung(id, dsnv, idErr, message) {
+    let DOMidErr = document.querySelector(idErr);
+
+    let viTri = dsnv.findIndex(function (nv) {
+        return nv.taiKhoan == id;
+    });
+    if (viTri != -1) {
+        // ko tìm thấy
+        DOMidErr.style.display = 'inline';
+        DOMidErr.innerHTML = message;
+        return false;
+    } else {
+        DOMidErr.style.display = 'none';
+        DOMidErr.innerHTML = "";
+        return true;
+    }
 }
 
